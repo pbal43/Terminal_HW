@@ -1,0 +1,41 @@
+1) Посмотреть где я - pwd 
+2) Создать папку - mkdir *foldername* 
+3) Зайти в папку - cd *foldername* 
+4) Создать 3 папки - mkdir *foldername* *foldername* *foldername* 
+5) Зайти в любую папку - cd *путь* (cd /d/Programms/QA/Git/lets_go/1) 
+6) Создать 5 файлов (3 txt, 2 json) - touch *filename.txt* *filename.txt* *filename.txt* *filename.json* *filename.json* 
+7) Создать 3 папки - bug (already exist - ex. 4) 
+8) Вывести список содержимого папки - ls -la 
+9) + Открыть любой txt файл - vim *filename.txt* 
+10) + написать туда что-нибудь, любой текст. - нажать *i*, после чего ввести текст 
+11) + сохранить и выйти. - нажать *esc*, ввести в нижнюю строку окна: *:wq* 
+12) Выйти из папки на уровень выше - cd.. 
+13) переместить любые 2 файла, которые вы создали, в любую другую папку - mv 2.txt 3.txt /d/Programms/QA/Git/lets_go/2 (или так: mv /d/Programms/QA/Git/lets_go/2/2/{1.txt,2.txt} /d/Programms/QA/Git/lets_go/2/3)
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку - cp 2.txt 3.txt /d/Programms/QA/Git/lets_go/3
+15) Найти файл по имени find . -name 'find_me.txt' (find /d/Programms/QA/Git/lets_go/ -name 'find_me.txt') - поиск в директории
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает tail -f 1.txt | grep search_term (греп фильтрует изменения поиском содержимого строки)
+17) вывести несколько первых строк из текстового файла - head -n3 1.txt
+18) вывести несколько последних строк из текстового файла - tail -n3 1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает - less 1.txt
+20) вывести дату и время - date
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+curl http://162.55.220.72:5005/terminal-hw-request
+curl "http://162.55.220.72:5005/get_method?name=(pablo)&age=(24)"
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+touch script
+vim script:
+{
+#!/bin/bash
+cd folder1
+mkdir folder11 folder12 folder13
+cd folder11
+touch text1.txt text2.txt text3.txt jn1.json jn2.json
+mkdir folder111 folder112 folder113
+ls -la
+mv text1.txt text2.txt /d/Programms/QA/Git/lets_go/1/here
+}
+chmod +x ./myscript
+./myscript
